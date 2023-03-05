@@ -8,12 +8,12 @@ public class Character {
     public String info;
 
 
-    Character(String n, float h, float ap, boolean al, String in) {
+    Character(String n, float h, float ap, boolean al) {
         this.name = n;
         this.health = h;
         this.attackPower = ap;
         this.isAlive = al;
-        this.info = in;
+
     }
 
     public String getName() {

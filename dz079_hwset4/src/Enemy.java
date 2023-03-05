@@ -6,8 +6,8 @@ public class Enemy extends Character{
         this.name = n;
         this.magicPower = mp;
     }
-    Enemy(String n, int h, int ap, boolean ia){
-        super(n,h,ap,ia)
+    Enemy(String n, int h, int ap, boolean al){
+        super(n,h,ap,al);
     }
     static void fight() {
         Random rand = new Random();
