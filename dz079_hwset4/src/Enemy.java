@@ -12,13 +12,10 @@ public class Enemy extends Character{
     }
 
     private float magicPower = 30;
-    Enemy(float h, float a, boolean al, String n, int mp){
-        super(h,ap,al)
+    Enemy(float h, float ap, boolean al, String n, int mp){
+        super(h,ap,al);
         this.name = n;
         this.magicPower = mp;
-    }
-    Enemy(String n, int h, int ap, boolean ia){
-        super(n,h,ap,ia)
     }
     float fight() {
         float damage;
@@ -29,9 +26,8 @@ public class Enemy extends Character{
         } else {
             damage = getAttackPower();
         }
-        float final= heroHp - damage;
-        float final = heroHp - damage;
-        return final
+        float finalHp= heroHp - damage;
+        return finalHp;
 
     }
 }
