@@ -8,7 +8,7 @@ public class Hero extends Character {
     
 
 
-    Hero(String n, float h, float ap, boolean al, String in) {
+    Hero(String n, double h, double ap, boolean al, String in) {
         super(n, h, ap, al, in);
     }
 }
