@@ -1,10 +1,7 @@
-package CairnRPG;
-
-import java.util.concurrent.TimeUnit;
 import java.util.Scanner;
+import java.util.concurrent.TimeUnit;
 
 public class RPGrunner {
-
     public static void main(String[] args) {
         //Setup
         World w = new World();
@@ -157,5 +154,4 @@ public class RPGrunner {
         }
 
     }
-
 }

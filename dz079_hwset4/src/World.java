@@ -8,6 +8,8 @@ public class World {
         this.publisher = pub;
     }
 
+    World ()
+
 
     public String getGameName() {return gameName;}
 
