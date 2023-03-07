@@ -1,11 +1,16 @@
 public class Boss extends Enemy{
 
-    private String name;
+    @Override
+    public void setName(String name) {
+        this.name = name;
+    }
 
-
+    @Override
     public String getName() {
         return name;
     }
+
+    private String name = "Big Boss";
     int ultrasLeft;
     public int getUltrasLeft() {
         return ultrasLeft;
@@ -13,7 +18,6 @@ public class Boss extends Enemy{
 
     Boss(double h, double ap, boolean ia){
         super(h,ap,ia);
-        this.name = "Big Boss";
         this.ultrasLeft = 3;
     }
 
@@ -56,19 +60,15 @@ public class Boss extends Enemy{
         return true;
     }
 
-<<<<<<< Updated upstream
-    public String info(Boss b){
-        String message = "Boss name: " + b.name + "\n" +
-                "Boss health: " + b.getHealth() + "\n" +
-                "Boss attack power: " + b.getAttackPower() + "\n" +
-                "Boss ultra attack left: " + b.ultrasLeft;
-=======
+
     public String info(){
         String message = "Boss name: " + getName() + "\n" +
                 "Boss health: " + getHealth() + "\n" +
                 "Boss attack power: " + getAttackPower() + "\n" +
                 "Boss ultra attack left: " + getUltrasLeft();
->>>>>>> Stashed changes
+
+
+
         return message;
     }
 }

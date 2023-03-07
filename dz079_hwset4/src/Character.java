@@ -1,3 +1,5 @@
+import java.util.Random;
+
 public class Character {
     private String name;
 
@@ -6,7 +8,17 @@ public class Character {
     private double attackPower;
     private boolean isAlive;
 
-    public boolean runAway;
+    public static boolean runAway(){
+        Random chance = new Random();
+        return chance.nextBoolean();
+    }
+
+    public static void info(String n, double h, double ap, boolean al) {
+        System.out.println(n);
+        System.out.println(h);
+        System.out.println(ap);
+        System.out.println(al);
+    }
 
 
     Character(String n, double h, double ap, boolean al) {
@@ -48,11 +60,6 @@ public class Character {
         isAlive = alive;
     }
 
-    public boolean isRunAway() {
-        return runAway;
+
     }
 
-    public void setRunAway(boolean runAway) {
-        this.runAway = runAway;
-    }
-}
