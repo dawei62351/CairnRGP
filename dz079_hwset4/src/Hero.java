@@ -11,7 +11,7 @@ public class Hero extends Character {
         super(h, ap, al);
     }
 
-    public boolean fight(Enemy) {
+    public boolean fight(Enemy e) {
 
     }
 

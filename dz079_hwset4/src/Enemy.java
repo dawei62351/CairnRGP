@@ -10,7 +10,7 @@ public class Enemy extends Character{
         return magicPower;
     }
 
-    private double magicPower;
+    private int magicPower;
     Enemy(double h, double ap, boolean al){
         super(h,ap,al);
         this.name = "Enemy1";
@@ -34,10 +34,10 @@ public class Enemy extends Character{
         return true;
     }
     String info(Enemy e){
-        String message = "Enemy name: " + this.name + "\n" +
-                "Enemy health: " + this.getHealth() + "\n" +
-                "Enemy attack power: " + this.getAttackPower() + "\n" +
-                "Enemy magic power: " + this.magicPower;
+        String message = "Enemy name: " + e.name + "\n" +
+                "Enemy health: " + e.getHealth() + "HP\n" +
+                "Enemy attack power: " + e.getAttackPower() + "\n" +
+                "Enemy magic power: " + e.magicPower;
         return message;
     }
 }
