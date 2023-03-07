@@ -3,6 +3,7 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 class EnemyTest {
+    
     Enemy e = new Enemy(100.0, 10.0, true);
     Hero h = new Hero(100.0, 10.0, true);
 
