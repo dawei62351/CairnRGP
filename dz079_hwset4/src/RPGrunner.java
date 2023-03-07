@@ -1,7 +1,9 @@
-import java.util.Scanner;
+import java.util.Random;
 import java.util.concurrent.TimeUnit;
+import java.util.Scanner;
 
 public class RPGrunner {
+
     public static void main(String[] args) {
         //Setup
         World w = new World();
@@ -82,7 +84,80 @@ public class RPGrunner {
     }
 
     public static void roam(Hero h) {
-        System.out.println("***\nYou were in a fight! (This feature will be added later.)\n***");
+        Enemy e = new Enemy(100.0, 10.0, true);
+        System.out.println("You were adventuring around the world and run into a wild '"+ e.getName() +"'!");
+        Random r = new Random();
+        int rStart = r.nextInt(10);
+        if (rStart<3) {
+            System.out.println("The beast got the jump on you, and attacked first.");
+            e.fight(h);
+            fightLoop(h, e, false);
+        } else {
+            System.out.println("You confront the beast and begin the encounter!");
+            fightLoop(h, e, true);
+        }
+    }
+
+    public static void fightLoop(Hero h, Enemy e, boolean heroFirst) {
+        Scanner fightScan = new Scanner(System.in);
+        Random r = new Random();
+        int userInput = -1;
+        boolean stillFighting = true;
+
+        while (stillFighting) {
+            if (!heroFirst) {
+                //enemy attacks BEFORE hero each round
+                if(!shouldIkeepFighting(h, e)){break;}
+                e.fight(h);
+            }
+
+            if(!shouldIkeepFighting(h, e)){break;}
+            //Fight Menu
+            System.out.println("\nWhat would you like to do in battle? (type the number below for which " +
+                    "option you would like, and then hit the ENTER key)\n");
+            System.out.println("--------------------------");
+            System.out.println("=====1. Attack!");
+            System.out.println("=====2. Use Healing Item");
+            System.out.println("=====3. Attempt to Run Away");
+            System.out.println("--------------------------");
+
+            userInput = fightScan.nextInt();
+
+            switch (userInput) {
+                case 1:
+                    //Attack
+                    h.fight(e);
+                    break;
+                case 2:
+                    //Healing Item
+                    System.out.println("**** Used a healing item **** [This feature has not been implemented yet.]");
+                    break;
+                case 3:
+                    //Run away
+                    boolean heroEscaped = h.runAway();
+                    stillFighting = !heroEscaped;
+                    break;
+            }
+            if (heroFirst) {
+                //enemy attacks AFTER hero each round
+                if(!shouldIkeepFighting(h, e)){break;}
+                e.fight(h);
+            }
+        }
+        if (h.isAlive() && !e.isAlive()) {
+            System.out.println("You have vanquished the beast!");
+            int newMoney = r.nextInt(10,51);
+            System.out.println("You receive " + newMoney + " GOLD!");
+            h.setMoney(h.getMoney()+newMoney);
+            int newExp = r.nextInt(20,40);
+            System.out.println("You receive " + newExp + " EXPERIENCE!");
+            h.setExperience(h.getExperience()+newExp);
+            h.levelUp();
+        }
+    }
+
+    public static boolean shouldIkeepFighting(Hero h, Enemy e) {
+        return h.isAlive() && e.isAlive();
     }
 
     public static void shop(Hero h) {
@@ -154,4 +229,5 @@ public class RPGrunner {
         }
 
     }
+
 }
