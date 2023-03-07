@@ -1,3 +1,4 @@
+// Liza Kim
 public class World {
     private String gameName;
     private String publisher;
@@ -7,8 +8,10 @@ public class World {
         this.gameName = gN;
         this.publisher = pub;
     }
-
-    World ()
+    World () {
+        gameName = "The Greatest RPG of All Time";
+        publisher = "CIS Duets";
+    }
 
 
     public String getGameName() {return gameName;}
