@@ -1,14 +1,14 @@
 public class Character {
     private String name;
-    private float health;
-    private float attackPower;
+    private double health;
+    private double attackPower;
     private boolean isAlive;
 
     public boolean runAway;
     public String info;
 
 
-    Character(String n, float h, float ap, boolean al, String in) {
+    Character(String n, double h, double ap, boolean al, String in) {
         this.name = n;
         this.health = h;
         this.attackPower = ap;
@@ -24,19 +24,19 @@ public class Character {
         this.name = name;
     }
 
-    public float getHealth() {
+    public double getHealth() {
         return health;
     }
 
-    public void setHealth(float health) {
+    public void setHealth(double health) {
         this.health = health;
     }
 
-    public float getAttackPower() {
+    public double getAttackPower() {
         return attackPower;
     }
 
-    public void setAttackPower(float attackPower) {
+    public void setAttackPower(double attackPower) {
         this.attackPower = attackPower;
     }
 

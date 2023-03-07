@@ -7,8 +7,15 @@ public class Hero extends Character {
     private ArrayList<String> inventory = new java.util.ArrayList<>();
 
 
-    Hero(String n, double h, double ap, boolean al, String in) {
+    Hero(String n, double h, double ap, boolean al, String in, int l, int e, float m) {
         super(n, h, ap, al, in);
+        this.level = l;
+        this.experience = e;
+        this.money = m;
+    }
+
+    Hero () {
+
     }
 
     public boolean fight(Enemy) {
