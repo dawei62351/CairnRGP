@@ -16,10 +16,25 @@ class BossTest {
     }
 
     @Test
-    void fight() {
-        assertEquals(true, b.fight(h));
+    void fightTestMiss() {
+        assertEquals(false, b.fightTest(h,0));
     }
-
+    @Test
+    void fightTestUltra() {
+        assertEquals(false, b.fightTest(h,2));
+    }
+    @Test
+    void fightTestNormal1() {
+        assertEquals(true, b.fightTest(h,3));
+    }
+    @Test
+    void fightTestNormal2() {
+        assertEquals(true, b.fightTest(h,5));
+    }
+    @Test
+    void fightTestNormal3() {
+        assertEquals(false, b.fightTest(h,10));
+    }
     @Test
     void info() {
         assertEquals("Boss name: Big Boss\nBoss health: 300.0HP\nBoss attack power: 30.0\nBoss ultra attack left: 3", b.info(b));
