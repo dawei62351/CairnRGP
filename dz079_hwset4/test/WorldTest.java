@@ -9,6 +9,7 @@ class WorldTest {
         var world = new World();
         assertEquals("The Greatest RPG of All Time", world.getGameName());
     }
+    
 
     @Test
     void getPublisher() {
