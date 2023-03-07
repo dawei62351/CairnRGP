@@ -38,6 +38,6 @@ class EnemyTest {
     }
     @Test
     void info() {
-        assertEquals("Enemy name: Enemy1\nEnemy health: 100.0HP\nEnemy attack power: 10.0\nEnemy magic power: 30", e.info(e));
+        assertEquals("Enemy name: Enemy Name\nEnemy health: 100.0HP\nEnemy attack power: 10.0\nEnemy magic power: 30", e.info());
     }
 }

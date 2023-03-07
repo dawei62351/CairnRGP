@@ -1,11 +1,5 @@
 import java.util.Random;
 public class Enemy extends Character{
-    private String name;
-
-    public String getName() {
-        return name;
-    }
-
     public double getMagicPower() {
         return magicPower;
     }
@@ -13,7 +7,6 @@ public class Enemy extends Character{
     private int magicPower;
     Enemy(double h, double ap, boolean al){
         super("Enemy Name",h,ap,al);
-        this.name = "Enemy1";
         this.magicPower = 30;
     }
     boolean fight(Hero h) {
@@ -55,11 +48,11 @@ public class Enemy extends Character{
         return true;
     }
 
-    public String info(Enemy e){
-        String message = "Enemy name: " + e.name + "\n" +
-                "Enemy health: " + e.getHealth() + "HP\n" +
-                "Enemy attack power: " + e.getAttackPower() + "\n" +
-                "Enemy magic power: " + e.magicPower;
+    public String info(){
+        String message = "Enemy name: " + getName() + "\n" +
+                "Enemy health: " + getHealth() + "HP\n" +
+                "Enemy attack power: " + getAttackPower() + "\n" +
+                "Enemy magic power: " + getMagicPower();
         return message;
     }
 }
