@@ -13,7 +13,7 @@ public class Enemy extends Character{
         double damage;
         int int_random = (int) (Math.random() * 10);
         double heroHp = h.getHealth();
-        if (int_random == 0){
+        if (int_random < 1){
             System.out.println("Enemy: "+getName()+" missed an attack");
             System.out.println("Attack missed: -0 HP");
             return false;
