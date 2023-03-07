@@ -55,12 +55,4 @@ public class Character {
     public void setRunAway(boolean runAway) {
         this.runAway = runAway;
     }
-
-    public String getInfo() {
-        return info;
-    }
-
-    public void setInfo(String info) {
-        this.info = info;
-    }
 }
