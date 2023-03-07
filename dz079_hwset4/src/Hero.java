@@ -9,16 +9,12 @@ public class Hero extends Character {
 
     Hero(String n, double h, double ap, boolean al, String in) {
         super(n, h, ap, al, in);
+
     }
 
     public boolean fight(Enemy) {
 
     }
-
-    public int useItem(int) {
-
-    }
-
 
 
 
