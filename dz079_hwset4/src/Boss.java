@@ -1,6 +1,14 @@
 public class Boss extends Enemy{
+
     private String name;
+    public String getName() {
+        return name;
+    }
     int ultrasLeft;
+    public int getUltrasLeft() {
+        return ultrasLeft;
+    }
+
     Boss(double h, double ap, boolean ia){
         super(h,ap,ia);
         this.name = "Big Boss";
@@ -15,7 +23,7 @@ public class Boss extends Enemy{
             System.out.println("Attack missed: -0HP");
             return false;
         } else if (int_random<3 && this.ultrasLeft>0){
-            damage = this.getAttackPower()*3.5;
+            damage = this.getAttackPower()*3;
             this.ultrasLeft -= 1;
             System.out.println("Ultra attack: -" + damage +"HP");
         } else {
@@ -25,10 +33,10 @@ public class Boss extends Enemy{
         return true;
     }
     String info(Boss b){
-        String message = "Boss name: " + this.name + "\n" +
-                "Boss health: " + this.getHealth() + "\n" +
-                "Boss attack power: " + this.getAttackPower() + "\n" +
-                "Boss ultra attack left: " + this.ultrasLeft;
+        String message = "Boss name: " + b.name + "\n" +
+                "Boss health: " + b.getHealth() + "\n" +
+                "Boss attack power: " + b.getAttackPower() + "\n" +
+                "Boss ultra attack left: " + b.ultrasLeft;
         return message;
     }
 }

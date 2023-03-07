@@ -12,7 +12,7 @@ public class Hero extends Character {
 
     }
 
-    public boolean fight(Enemy) {
+    public boolean fight(Enemy e) {
 
     }
 
