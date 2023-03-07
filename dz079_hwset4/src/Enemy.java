@@ -12,7 +12,7 @@ public class Enemy extends Character{
 
     private int magicPower;
     Enemy(double h, double ap, boolean al){
-        super(h,ap,al);
+        super("Enemy Name",h,ap,al);
         this.name = "Enemy1";
         this.magicPower = 30;
     }
