@@ -66,9 +66,6 @@ public class Boss extends Enemy{
                 "Boss health: " + getHealth() + "\n" +
                 "Boss attack power: " + getAttackPower() + "\n" +
                 "Boss ultra attack left: " + getUltrasLeft();
-
-
-
         return message;
     }
 }
