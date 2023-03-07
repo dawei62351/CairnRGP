@@ -56,11 +56,19 @@ public class Boss extends Enemy{
         return true;
     }
 
+<<<<<<< Updated upstream
     public String info(Boss b){
         String message = "Boss name: " + b.name + "\n" +
                 "Boss health: " + b.getHealth() + "\n" +
                 "Boss attack power: " + b.getAttackPower() + "\n" +
                 "Boss ultra attack left: " + b.ultrasLeft;
+=======
+    public String info(){
+        String message = "Boss name: " + getName() + "\n" +
+                "Boss health: " + getHealth() + "\n" +
+                "Boss attack power: " + getAttackPower() + "\n" +
+                "Boss ultra attack left: " + getUltrasLeft();
+>>>>>>> Stashed changes
         return message;
     }
 }
