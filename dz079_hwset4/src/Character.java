@@ -13,6 +13,13 @@ public class Character {
         return chance.nextBoolean();
     }
 
+    public static void info(String n, double h, double ap, boolean al) {
+        System.out.println(n);
+        System.out.println(h);
+        System.out.println(ap);
+        System.out.println(al);
+    }
+
 
     Character(String n, double h, double ap, boolean al) {
         this.name = n;
@@ -55,4 +62,4 @@ public class Character {
 
 
     }
-}
+

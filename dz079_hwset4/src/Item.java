@@ -2,12 +2,12 @@ public class Item {
     private String name;
     private int healingPower;
 
-    public String info;
 
-    public Item(String n, int hP, String in) {
+
+    public Item(String n, int hP) {
         this.name = n;
         this.healingPower = hP;
-        this.info = in;
+
     }
 
     public String getName() {
@@ -26,11 +26,8 @@ public class Item {
         this.healingPower = healingPower;
     }
 
-    public String getInfo() {
-        return info;
-    }
-
-    public void setInfo(String info) {
-        this.info = info;
+    public static void info(String n, int hP) {
+        System.out.println(n);
+        System.out.println(hP);
     }
 }
