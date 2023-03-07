@@ -14,19 +14,6 @@ public class Hero extends Character {
         this.money = m;
     }
 
-    Hero () {
-
-    }
-
-    public boolean fight(Enemy) {
-
-    }
-
-    public int useItem(int) {
-
-    }
-
-
 
 
 }
