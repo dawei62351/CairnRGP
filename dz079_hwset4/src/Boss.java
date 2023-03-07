@@ -60,11 +60,15 @@ public class Boss extends Enemy{
         return true;
     }
 
+
     public String info(){
-        String message = "Boss name: " + name + "\n" +
+        String message = "Boss name: " + getName() + "\n" +
                 "Boss health: " + getHealth() + "\n" +
                 "Boss attack power: " + getAttackPower() + "\n" +
                 "Boss ultra attack left: " + getUltrasLeft();
+
+
+
         return message;
     }
 }
