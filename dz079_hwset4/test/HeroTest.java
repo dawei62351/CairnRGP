@@ -10,7 +10,7 @@ class HeroTest {
 
     @Test
     void levelUp() {
-        assertEquals();
+        //assertEquals();
     }
 
     @Test

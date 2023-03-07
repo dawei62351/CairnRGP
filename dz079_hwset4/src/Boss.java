@@ -66,7 +66,7 @@ public class Boss extends Enemy{
 
     public String info(){
         String message = "Boss name: " + getName() + "\n" +
-                "Boss health: " + getHealth() + "\n" +
+                "Boss health: " + getHealth() + "HP" +"\n" +
                 "Boss attack power: " + getAttackPower() + "\n" +
                 "Boss ultra attack left: " + getUltrasLeft();
 

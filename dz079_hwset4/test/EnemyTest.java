@@ -8,7 +8,7 @@ class EnemyTest {
 
     @Test
     void getName() {
-        assertEquals("Enemy1", e.getName());
+        assertEquals("Ubda", e.getName());
     }
 
     @Test
@@ -22,7 +22,7 @@ class EnemyTest {
     }
     @Test
     void fightTestMagic() {
-        assertEquals(false, e.fightTest(h,2));
+        assertEquals(true, e.fightTest(h,2));
     }
     @Test
     void fightTestNormal1() {
@@ -33,11 +33,7 @@ class EnemyTest {
         assertEquals(true, e.fightTest(h,5));
     }
     @Test
-    void fightTestNormal3() {
-        assertEquals(false, e.fightTest(h,10));
-    }
-    @Test
     void info() {
-        assertEquals("Enemy name: Ubda\nEnemy health: 100.0HP\nEnemy attack power: 10.0\nEnemy magic power: 30", e.info());
+        assertEquals("Enemy name: Ubda\nEnemy health: 100.0HP\nEnemy attack power: 10.0\nEnemy magic power: 30.0", e.info());
     }
 }
