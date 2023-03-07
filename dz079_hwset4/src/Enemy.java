@@ -26,9 +26,11 @@ public class Enemy extends Character{
         } else if (int_random<3 && this.magicPower>5){
             damage = this.getAttackPower()*2;
             this.magicPower -= 5;
+            h.setHealth(heroHp-damage);
             System.out.println("Magic attack: -" + damage +"HP");
         } else {
             damage = this.getAttackPower();
+            h.setHealth(heroHp-damage);
             System.out.println("Normal attack: -" + damage +"HP");
         }
         return true;
