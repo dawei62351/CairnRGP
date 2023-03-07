@@ -8,6 +8,7 @@ public class Character {
     public String info;
 
 
+    //i think "String n" and "String in" need to be moved out of the constructor. *info is also a method, not an attribute
     Character(String n, double h, double ap, boolean al, String in) {
         this.name = n;
         this.health = h;
