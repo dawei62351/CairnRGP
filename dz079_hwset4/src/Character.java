@@ -7,15 +7,13 @@ public class Character {
     private boolean isAlive;
 
     public boolean runAway;
-    public String info;
 
 
-    Character(String n, double h, double ap, boolean al, String in) {
+    Character(String n, double h, double ap, boolean al) {
         this.name = n;
         this.health = h;
         this.attackPower = ap;
         this.isAlive = al;
-        this.info = in;
     }
 
     public String getName() {
@@ -56,13 +54,5 @@ public class Character {
 
     public void setRunAway(boolean runAway) {
         this.runAway = runAway;
-    }
-
-    public String getInfo() {
-        return info;
-    }
-
-    public void setInfo(String info) {
-        this.info = info;
     }
 }
