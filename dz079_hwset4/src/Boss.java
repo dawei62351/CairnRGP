@@ -25,9 +25,11 @@ public class Boss extends Enemy{
         } else if (int_random<3 && this.ultrasLeft>0){
             damage = this.getAttackPower()*3;
             this.ultrasLeft -= 1;
+            h.setHealth(heroHp-damage);
             System.out.println("Ultra attack: -" + damage +"HP");
         } else {
             damage = this.getAttackPower();
+            h.setHealth(heroHp-damage);
             System.out.println("Normal attack: -" + damage +"HP");
         }
         return true;
