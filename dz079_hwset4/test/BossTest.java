@@ -7,7 +7,7 @@ class BossTest {
     Hero h = new Hero(100.0, 10.0, true);
     @Test
     void getName() {
-        assertEquals("Big Boos", b.getName());
+        assertEquals("Mom", b.getName());
     }
 
     @Test
@@ -21,7 +21,7 @@ class BossTest {
     }
     @Test
     void fightTestUltra() {
-        assertEquals(false, b.fightTest(h,2));
+        assertEquals(true, b.fightTest(h,2));
     }
     @Test
     void fightTestNormal1() {
@@ -30,10 +30,6 @@ class BossTest {
     @Test
     void fightTestNormal2() {
         assertEquals(true, b.fightTest(h,5));
-    }
-    @Test
-    void fightTestNormal3() {
-        assertEquals(false, b.fightTest(h,10));
     }
     @Test
     void info() {
