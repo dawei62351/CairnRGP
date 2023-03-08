@@ -30,6 +30,20 @@ class HeroTest {
 
 
 
+    //addToInventory() tests
+    @Test
+    void addToInventoryAddedItem() {
+        Item item = new Item("Potion", 20);
+
+        assertEquals(true, h.addToInventoryTest(item,1));
+    }
+
+    //why does this give me an error?
+    @Test
+    void addToInventoryFail() {
+        Item item = new Item("Potion", 20);
+        assertEquals(false, h.addToInventoryTest(item,5));
+    }
 //    @Test
 //    void levelUp() {
 //        var hero = new Hero(100.0, 10.0, true);
@@ -47,8 +61,10 @@ class HeroTest {
 
 //    @Test
 //    void showInventory() {
-//        var trinket = new Item("Potion", 20);
-//        assertEquals()
+//        Item trinket = new Item("Potion", 20);
+//        var showInventory = h.addToInventory(trinket);
+//        HeroTest inventory = null;
+//        assertEquals(1, inventory.showInventory());
 //    }
 
     @Test

@@ -8,21 +8,37 @@ public class Hero extends Character {
     private Item[] inventory = new Item[5];
 
 
-    public int getLevel() {return level;}
+    public int getLevel() {
+        return level;
+    }
 
-    public void setLevel(int level) {this.level = level;}
+    public void setLevel(int level) {
+        this.level = level;
+    }
 
-    public int getExperience() {return experience;}
+    public int getExperience() {
+        return experience;
+    }
 
-    public void setExperience(int experience) {this.experience = experience;}
+    public void setExperience(int experience) {
+        this.experience = experience;
+    }
 
-    public float getMoney() {return money;}
+    public float getMoney() {
+        return money;
+    }
 
-    public void setMoney(float money) {this.money = money;}
+    public void setMoney(float money) {
+        this.money = money;
+    }
 
-    public Item[] getInventory() {return inventory;}
+    public Item[] getInventory() {
+        return inventory;
+    }
 
-    public void setInventory(Item[] inventory) {this.inventory = inventory;}
+    public void setInventory(Item[] inventory) {
+        this.inventory = inventory;
+    }
 
 
     Hero(double h, double ap, boolean al) {
@@ -62,25 +78,23 @@ public class Hero extends Character {
             if (inventory[i] == null) {
                 inventory[i] = item;
                 return true;
-
             }
-
         }
         return false;
     }
 
     public void useItem() {
-            for (int i = 0; i<inventory.length; i++) {
-                if (inventory[i] != null) {
-                    Item firstItem = inventory[i];
-                    setHealth(getHealth()+firstItem.getHealingPower());
-                    System.out.println("A "+firstItem.getName()+" healed "+getName()+" by "+firstItem.getHealingPower()+" HP.");
-                    inventory[i] = null;
-                    break;
-                }
+        for (int i = 0; i < inventory.length; i++) {
+            if (inventory[i] != null) {
+                Item firstItem = inventory[i];
+                setHealth(getHealth() + firstItem.getHealingPower());
+                System.out.println("A " + firstItem.getName() + " healed " + getName() + " by " + firstItem.getHealingPower() + " HP.");
+                inventory[i] = null;
+                break;
             }
-            System.out.println("You have no items.");
         }
+        System.out.println("You have no items.");
+    }
 
 
     public void showInventory() {
@@ -98,6 +112,8 @@ public class Hero extends Character {
         return stats;
     }
 
+
+
     boolean fightTest(Enemy e, int i) {
         if (i == 0) {
             System.out.println("Your attack missed." + "\n" + e.getName() + " took 0 damage.");
@@ -114,4 +130,14 @@ public class Hero extends Character {
             return true;
         }
     }
+
+    public boolean addToInventoryTest(Item item, int i) {
+        if (inventory[i] == null) {
+            inventory[i] = item;
+            return true;
+        } else {
+            return false;
+        }
+    }
 }
+
