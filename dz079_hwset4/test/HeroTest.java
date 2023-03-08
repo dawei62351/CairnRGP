@@ -37,19 +37,18 @@ class HeroTest {
 
         assertEquals(true, h.addToInventoryTest(item,1));
     }
-
-    //why does this give me an error?
     @Test
     void addToInventoryFail() {
         Item item = new Item("Potion", 20);
         assertEquals(false, h.addToInventoryTest(item,5));
     }
-//    @Test
-//    void levelUp() {
-//        var hero = new Hero(100.0, 10.0, true);
-//        int level = 1;
-//        assertEquals(2, hero.levelUp(110));
-//    }
+
+
+    @Test
+    void levelUp() {
+
+        assertEquals(true, h.levelUp());
+    }
 
 //    @Test
 //    void useItem() {

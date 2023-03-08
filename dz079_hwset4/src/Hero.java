@@ -54,11 +54,13 @@ public class Hero extends Character {
             double specialDamage = e.getHealth() - (getAttackPower() * 3);
             e.setHealth(specialDamage);
             System.out.println("You landed a special attack!" + "\n" + e.getName() + " took " + specialDamage + "damage.");
+            System.out.println(e.getName()+" has "+e.getHealth()+" HP left.");
             return true;
         } else {
             double basicDamage = e.getHealth() - (getAttackPower());
             e.setHealth(basicDamage);
             System.out.println("You landed a basic attack!" + "\n" + e.getName() + " took " + basicDamage + "damage.");
+            System.out.println(e.getName()+" has "+e.getHealth()+" HP left.");
             return true;
         }
     }
@@ -135,9 +137,8 @@ public class Hero extends Character {
         if (inventory[i] == null) {
             inventory[i] = item;
             return true;
-        } else {
-            return false;
         }
+        return false;
     }
 }
 
