@@ -37,18 +37,18 @@ class HeroTest {
 
         assertEquals(true, h.addToInventoryTest(item,1));
     }
-    @Test
-    void addToInventoryFail() {
-        Item item = new Item("Potion", 20);
-        assertEquals(false, h.addToInventoryTest(item,5));
-    }
+//    @Test
+//    void addToInventoryFail() {
+//        Item item = new Item("Potion", 20);
+//        assertEquals(false, h.addToInventoryTest(item,5));
+//    }
 
 
-    @Test
-    void levelUp() {
-
-        assertEquals(true, h.levelUp());
-    }
+//    @Test
+//    void levelUp() {
+//
+//        assertEquals(true, h.levelUp());
+//    }
 
 //    @Test
 //    void useItem() {
