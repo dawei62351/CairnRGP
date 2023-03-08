@@ -41,6 +41,9 @@ public class Boss extends Enemy{
             System.out.println("Boss: "+getName()+" landed an normal attack");
             System.out.println("Normal attack: -" + damage +" HP");
         }
+        if (h.getHealth()<=0){
+            h.setAlive(false);
+        }
         return true;
     }
 
@@ -59,6 +62,9 @@ public class Boss extends Enemy{
             damage = this.getAttackPower();
             h.setHealth(heroHp-damage);
             System.out.println("Normal attack: -" + damage +"HP");
+        }
+        if (h.getHealth()<=0){
+            h.setAlive(false);
         }
         return true;
     }

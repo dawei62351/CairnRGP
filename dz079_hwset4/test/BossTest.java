@@ -33,6 +33,6 @@ class BossTest {
     }
     @Test
     void info() {
-        assertEquals("Boss name: Mom\nBoss health: 300.0HP\nBoss attack power: 30.0\nBoss ultra attack left: 3", b.info());
+        assertEquals("Boss name: Mom\nBoss health: 300.0\nBoss attack power: 30.0\nBoss ultra attack left: 3", b.info());
     }
 }

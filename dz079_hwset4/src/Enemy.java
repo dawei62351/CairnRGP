@@ -29,6 +29,9 @@ public class Enemy extends Character{
             System.out.println("Enemy: "+getName()+" landed an normal attack");
             System.out.println("Normal attack: -" + damage +"HP");
         }
+        if (h.getHealth()<=0){
+            h.setAlive(false);
+        }
         return true;
     }
 
@@ -51,8 +54,13 @@ public class Enemy extends Character{
             System.out.println("Enemy"+getName()+" landed an normal attack");
             System.out.println("Normal attack: -" + damage +" HP");
         }
+        if (h.getHealth()<=0){
+            h.setAlive(false);
+        }
         return true;
     }
+
+
 
     public String info(){
         String message = "Enemy name: " + getName() + "\n" +
