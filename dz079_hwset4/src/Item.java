@@ -27,7 +27,7 @@ public class Item {
     }
 
     public static void info(String n, int hP) {
-        System.out.println(n);
-        System.out.println(hP);
+        System.out.println(n + hP);
+
     }
 }
