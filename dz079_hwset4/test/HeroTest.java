@@ -21,7 +21,12 @@ class HeroTest {
     void showInventory() {
     }
 
-    @Test
-    void info() {
-    }
+//    @Test
+//    void info() {
+//        assertEquals("Hero name: Bob\nHero health: getHealth() + "\n" +
+//                "Hero attack power: " + getAttackPower() + "\n" +
+//                "Hero level: " + level + "\n" +
+//                "Hero experience: " + experience + "\n" +
+//                "Hero bank account: " + money + "\n", )
+//    }
 }

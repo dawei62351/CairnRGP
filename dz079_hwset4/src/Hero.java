@@ -62,11 +62,11 @@ public class Hero extends Character {
             if (inventory[i] == null) {
                 inventory[i] = item;
                 return true;
-                break;
-            } else {
-                return false;
+
             }
+
         }
+        return false;
     }
 
     public void useItem() {
