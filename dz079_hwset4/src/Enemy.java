@@ -27,11 +27,12 @@ public class Enemy extends Character{
             damage = this.getAttackPower();
             h.setHealth(heroHp-damage);
             System.out.println("Enemy: "+getName()+" landed an normal attack");
-            System.out.println("Normal attack: -" + damage +"HP");
+            System.out.println("Normal attack: -" + damage +" HP");
         }
         if (h.getHealth()<=0){
             h.setAlive(false);
         }
+        System.out.println("you have "+h.getHealth()+" HP left.");
         return true;
     }
 
