@@ -7,7 +7,8 @@ class HeroTest {
     Hero h = new Hero(100.0, 10.0, true);
 
     @Test
-    void fight() {
+    void fightBasicHit() {
+
     }
 
 //    @Test
@@ -19,14 +20,11 @@ class HeroTest {
 
     @Test
     void showInventory() {
+        var trinket = new Item("Potion", 20);
     }
 
-//    @Test
-//    void info() {
-//        assertEquals("Hero name: Bob\nHero health: getHealth() + "\n" +
-//                "Hero attack power: " + getAttackPower() + "\n" +
-//                "Hero level: " + level + "\n" +
-//                "Hero experience: " + experience + "\n" +
-//                "Hero bank account: " + money + "\n", )
-//    }
+    @Test
+    void infoReturn() {
+        assertEquals("Hero name: Bob\nHero health: 100.0\nHero attack power: 10.0\nHero level: 1\nHero experience: 0\nHero bank account: 0.0\n", h.info());
+    }
 }
