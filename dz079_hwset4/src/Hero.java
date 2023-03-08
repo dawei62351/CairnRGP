@@ -97,4 +97,21 @@ public class Hero extends Character {
                 "Hero bank account: " + money + "\n";
         return stats;
     }
+
+    boolean fightTest(Enemy e, int i) {
+        if (i == 0) {
+            System.out.println("Your attack missed." + "\n" + e.getName() + " took 0 damage.");
+            return false;
+        } else if (i % 2 == 0) {
+            double specialDamage = e.getHealth() - (getAttackPower() * 3);
+            e.setHealth(specialDamage);
+            System.out.println("You landed a special attack!" + "\n" + e.getName() + " took " + specialDamage + "damage.");
+            return true;
+        } else {
+            double basicDamage = e.getHealth() - (getAttackPower());
+            e.setHealth(basicDamage);
+            System.out.println("You landed a basic attack!" + "\n" + e.getName() + " took " + basicDamage + "damage.");
+            return true;
+        }
+    }
 }
