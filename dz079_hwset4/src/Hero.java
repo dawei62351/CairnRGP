@@ -5,7 +5,7 @@ public class Hero extends Character {
     private int level = 1;
     private int experience = 0;
     private float money = 0.0F;
-    private ArrayList<String> inventory = new java.util.ArrayList<>();
+    private Item[] inventory = new Item[5];
 
 
     public int getLevel() {return level;}
@@ -20,9 +20,9 @@ public class Hero extends Character {
 
     public void setMoney(float money) {this.money = money;}
 
-    public ArrayList<String> getInventory() {return inventory;}
+    public Item[] getInventory() {return inventory;}
 
-    public void setInventory(ArrayList<String> inventory) {this.inventory = inventory;}
+    public void setInventory(Item[] inventory) {this.inventory = inventory;}
 
 
     Hero(double h, double ap, boolean al) {
@@ -56,6 +56,31 @@ public class Hero extends Character {
             System.out.println("Congrats! You leveled up to level " + level);
         }
     }
+
+    public boolean addToInventory(Item item) {
+        for (int i = 0; i < inventory.length; i++) {
+            if (inventory[i] == null) {
+                inventory[i] = item;
+                return true;
+                break;
+            } else {
+                return false;
+            }
+        }
+    }
+
+    public void useItem() {
+            for (int i = 0; i<inventory.length; i++) {
+                if (inventory[i] != null) {
+                    Item firstItem = inventory[i];
+                    setHealth(getHealth()+firstItem.getHealingPower());
+                    System.out.println("A "+firstItem.getName()+" healed "+getName()+" by "+firstItem.getHealingPower()+" HP.");
+                    inventory[i] = null;
+                    break;
+                }
+            }
+            System.out.println("You have no items.");
+        }
 
 
     public void showInventory() {
