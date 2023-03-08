@@ -5,6 +5,6 @@ class CharacterTest {
 
     @Test
     void info() {
-        
+
     }
 }
