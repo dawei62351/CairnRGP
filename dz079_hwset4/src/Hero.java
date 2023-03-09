@@ -1,5 +1,4 @@
 //Liza Kim
-import java.util.ArrayList;
 
 public class Hero extends Character {
     private int level = 1;
@@ -8,37 +7,14 @@ public class Hero extends Character {
     private Item[] inventory = new Item[5];
 
 
-    public int getLevel() {
-        return level;
-    }
-
-    public void setLevel(int level) {
-        this.level = level;
-    }
-
-    public int getExperience() {
-        return experience;
-    }
-
-    public void setExperience(int experience) {
-        this.experience = experience;
-    }
-
-    public float getMoney() {
-        return money;
-    }
-
-    public void setMoney(float money) {
-        this.money = money;
-    }
-
-    public Item[] getInventory() {
-        return inventory;
-    }
-
-    public void setInventory(Item[] inventory) {
-        this.inventory = inventory;
-    }
+    public int getLevel() {return level;}
+    public void setLevel(int level) {this.level = level;}
+    public int getExperience() {return experience;}
+    public void setExperience(int experience) {this.experience = experience;}
+    public float getMoney() {return money;}
+    public void setMoney(float money) {this.money = money;}
+    public Item[] getInventory() {return inventory;}
+    public void setInventory(Item[] inventory) {this.inventory = inventory;}
 
 
     Hero(double h, double ap, boolean al) {
@@ -51,6 +27,8 @@ public class Hero extends Character {
             System.out.println("Your attack missed." + "\n" + e.getName() + " took 0 damage.");
             return false;
         } else if (int_random % 2 == 0) {
+            if (e.getHealth() <= 0){
+                e.setAlive(false);
             double specialDamage = e.getHealth() - (getAttackPower() * 3);
             e.setHealth(specialDamage);
             System.out.println("You landed a special attack!" + "\n" + e.getName() + " took " + specialDamage + "damage.");
@@ -61,8 +39,10 @@ public class Hero extends Character {
             e.setHealth(basicDamage);
             System.out.println("You landed a basic attack!" + "\n" + e.getName() + " took " + basicDamage + "damage.");
             System.out.println(e.getName()+" has "+e.getHealth()+" HP left.");
-            return true;
         }
+        }
+        System.out.println("you have "+ getHealth()+" HP left.");
+        return true;
     }
 
     public boolean levelUp() {
@@ -72,8 +52,9 @@ public class Hero extends Character {
             setAttackPower(getAttackPower() * 1.1);
             setHealth(getHealth() * 1.1);
             System.out.println("Congrats! You leveled up to level " + level);
+            return true;
         }
-        return true;
+        return false;
     }
 
     public boolean addToInventory(Item item) {
@@ -86,7 +67,7 @@ public class Hero extends Character {
         return false;
     }
 
-    public void useItem() {
+    public int useItem() {
         for (int i = 0; i < inventory.length; i++) {
             if (inventory[i] != null) {
                 Item firstItem = inventory[i];
@@ -96,13 +77,21 @@ public class Hero extends Character {
                 break;
             }
         }
-        System.out.println("You have no items.");
+        System.out.println("You currently have no items.");
+        return 0;
     }
 
 
-    public void showInventory() {
-        //in case doesn't work, try toString
-        System.out.println(inventory);
+    public String showInventory() {
+        //System.out.println(inventory);
+        //check to make sure this works
+        String items = "";
+        for (int i = 0; i < inventory.length; i++) {
+            if (inventory[i] != null) {
+                items += inventory[i].getName() + " (" +(inventory[i].getHealingPower())+ ")" + ", ";
+            }
+        }
+        return items;
     }
 
     public String info() {
