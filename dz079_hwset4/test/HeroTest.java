@@ -44,11 +44,19 @@ class HeroTest {
 //    }
 
 
-//    @Test
-//    void levelUp() {
-//
-//        assertEquals(true, h.levelUp());
-//    }
+
+
+    //levelUp() tests
+    @Test
+    void levelUpOnce() {
+        h.setExperience(120);
+        assertEquals(true, h.levelUp());
+    }
+    @Test
+    void levelUpNot() {
+        h.setExperience(90);
+        assertEquals(true, h.levelUp());
+    }
 
 //    @Test
 //    void useItem() {

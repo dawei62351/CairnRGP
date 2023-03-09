@@ -65,7 +65,7 @@ public class Hero extends Character {
         }
     }
 
-    public void levelUp() {
+    public boolean levelUp() {
         if (experience > 100) {
             level++;
             experience = 0;
@@ -73,6 +73,7 @@ public class Hero extends Character {
             setHealth(getHealth() * 1.1);
             System.out.println("Congrats! You leveled up to level " + level);
         }
+        return true;
     }
 
     public boolean addToInventory(Item item) {
