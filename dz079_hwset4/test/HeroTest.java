@@ -86,6 +86,6 @@ class HeroTest {
     //infoReturn() test
     @Test
     void infoReturn() {
-        assertEquals("Hero name: Bob\nHero health: 100.0\nHero attack power: 10.0\nHero level: 1\nHero experience: 0\nHero bank account: 0.0\n", h.info());
+        assertEquals("Hero name: Bob\nHero health: 100.0\nHero attack power: 10.0\nHero level: 1\nHero experience: 0\nHero bank account: 50.0\nInventory: ", h.info());
     }
 }

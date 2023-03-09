@@ -100,7 +100,8 @@ public class Hero extends Character {
                 "Hero attack power: " + getAttackPower() + "\n" +
                 "Hero level: " + level + "\n" +
                 "Hero experience: " + experience + "\n" +
-                "Hero bank account: " + money + "\n";
+                "Hero bank account: " + money + "\n"+
+                "Inventory: " + showInventory();
         return stats;
     }
 
