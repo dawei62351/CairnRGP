@@ -41,7 +41,6 @@ public class Hero extends Character {
         if (e.getHealth() <= 0){
             e.setAlive(false);
         }
-        System.out.println("You have "+ getHealth()+" HP left.");
         return true;
     }
 

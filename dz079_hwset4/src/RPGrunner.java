@@ -295,8 +295,5 @@ public class RPGrunner {
             TimeUnit.MILLISECONDS.sleep(titleScreenWait*2);
             System.out.print(".");
         }
-
     }
-
-
 }
