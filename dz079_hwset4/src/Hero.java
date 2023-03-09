@@ -3,7 +3,7 @@
 public class Hero extends Character {
     private int level = 1;
     private int experience = 0;
-    private float money = 0.0F;
+    private float money = 50.0F;
     private Item[] inventory = new Item[5];
 
 

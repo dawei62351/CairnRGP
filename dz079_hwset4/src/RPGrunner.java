@@ -2,8 +2,16 @@ import java.util.Random;
 import java.util.concurrent.TimeUnit;
 import java.util.Scanner;
 
+/**
+ * This is a main runner for the RPG Cairn assignment.
+ * @author B Petcaugh
+ * @version 2.1
+ */
 public class RPGrunner {
-
+    /**
+     * This runs the entire program.
+     * @param args
+     */
     public static void main(String[] args) {
         //Setup
         World w = new World();
@@ -83,6 +91,10 @@ public class RPGrunner {
 
     }
 
+    /**
+     * THis will roam around the world.
+     * @param h the hero that is roaming around
+     */
     public static void roam(Hero h) {
         Enemy e = new Enemy(100.0, 10.0, true);
         System.out.println("You were adventuring around the world and run into a wild '"+ e.getName() +"'!");
@@ -98,6 +110,12 @@ public class RPGrunner {
         }
     }
 
+    /**
+     * This will provide the back and forth fight between enemy and hero.
+     * @param h The hero who is fighting
+     * @param e The enemy in the fight
+     * @param heroFirst Who will attack first
+     */
     public static void fightLoop(Hero h, Enemy e, boolean heroFirst) {
         Scanner fightScan = new Scanner(System.in);
         Random r = new Random();
@@ -161,12 +179,62 @@ public class RPGrunner {
     }
 
     public static void shop(Hero h) {
-        System.out.println("***\nYou went shopping (This feature will be added later.)\n***");
+        System.out.println("***\nYou went shopping.\n***");
+
+        Scanner shopScan = new Scanner(System.in);
+        Random r = new Random();
+        int userInput = -1;
+        boolean stillShopping = true;
+
+        while (stillShopping) {
+            System.out.println("Welcome to the shop, what would you like to buy?");
+            System.out.println("===== 1. Potion, 10 GOLD (Heals 20 Health Points");
+            System.out.println("===== 2. Super Potion, 30 GOLD (Heals 50 Health Points");
+            System.out.println("===== 3. LEAVE SHOP");
+
+            userInput = shopScan.nextInt();
+
+            switch (userInput) {
+                case 1:
+                    if (h.getMoney() >= 10) {
+                        if (h.addToInventory(new Item("Potion", 20))) {
+                            h.setMoney(h.getMoney() - 10);
+                            System.out.println("You purchased a 'Potion'");
+                            System.out.println("You still have " + h.getMoney() + " Gold left.");
+                        } else {
+                            System.out.println("You tried to purchase this but your inventory slots are full.");
+                        }
+                    } else {
+                        System.out.println("You do not have enough money to purchase that item.\n\n");
+                    }
+
+                    break;
+                case 2:
+                    if (h.getMoney() >= 30) {
+                        if (h.addToInventory(new Item("Super Potion", 50))) {
+                            h.setMoney(h.getMoney() - 30);
+                            System.out.println("You purchased a 'Super Potion'");
+                            System.out.println("You still have " + h.getMoney() + " Gold left.");
+                        } else {
+                            System.out.println("You tried to purchase this but your inventory slots are full.");
+                        }
+                    } else {
+                        System.out.println("You do not have enough money to purchase that item.\n\n");
+                    }
+                    break;
+                case 3:
+                    stillShopping = false;
+            }
+
+        }
+
+        System.out.println("\n\n Thanks for shopping with us, have a nice day!");
+
     }
 
     public static void rest(Hero h) throws InterruptedException {
         //resting can only be used once, and adds 100 to your current health
-        h.setHealth(h.getHealth() + 100);
+        h.setHealth(h.getHealth() + 500);
         System.out.println("Time passes while you rest to heal...");
 
         String restS = "";
@@ -229,5 +297,6 @@ public class RPGrunner {
         }
 
     }
+
 
 }
