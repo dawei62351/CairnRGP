@@ -27,8 +27,6 @@ public class Hero extends Character {
             System.out.println("Your attack missed." + "\n" + e.getName() + " took 0 damage.");
             return false;
         } else if (int_random % 2 == 0) {
-            if (e.getHealth() <= 0){
-                e.setAlive(false);
             double specialDamage = e.getHealth() - (getAttackPower() * 3);
             e.setHealth(specialDamage);
             System.out.println("You landed a special attack!" + "\n" + e.getName() + " took " + specialDamage + "damage.");
@@ -40,8 +38,10 @@ public class Hero extends Character {
             System.out.println("You landed a basic attack!" + "\n" + e.getName() + " took " + basicDamage + "damage.");
             System.out.println(e.getName()+" has "+e.getHealth()+" HP left.");
         }
+        if (e.getHealth() <= 0){
+            e.setAlive(false);
         }
-        System.out.println("you have "+ getHealth()+" HP left.");
+        System.out.println("You have "+ getHealth()+" HP left.");
         return true;
     }
 

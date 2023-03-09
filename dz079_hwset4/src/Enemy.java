@@ -32,7 +32,7 @@ public class Enemy extends Character{
         if (h.getHealth()<=0){
             h.setAlive(false);
         }
-        System.out.println("you have "+h.getHealth()+" HP left.");
+        System.out.println("Enemy has "+getHealth()+" HP left.");
         return true;
     }
 
