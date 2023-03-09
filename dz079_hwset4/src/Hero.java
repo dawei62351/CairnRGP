@@ -22,25 +22,24 @@ public class Hero extends Character {
     }
 
     public boolean fight(Enemy e) {
-        int int_random = (int) (Math.random() * 5);
+        int int_random = (int) (Math.random() * 10);
         if (int_random == 0) {
             System.out.println("Your attack missed." + "\n" + e.getName() + " took 0 damage.");
+            System.out.println(e.getName()+" has "+e.getHealth()+" HP left.");
             return false;
         } else if (int_random % 2 == 0) {
             double specialDamage = e.getHealth() - (getAttackPower() * 3);
             e.setHealth(specialDamage);
-            System.out.println("You landed a special attack!" + "\n" + e.getName() + " took " + specialDamage + "damage.");
-            System.out.println(e.getName()+" has "+e.getHealth()+" HP left.");
-            return true;
+            System.out.println("You landed a special attack!" + "\n" + e.getName() + " took " + (getAttackPower() * 3) + "damage.");
         } else {
             double basicDamage = e.getHealth() - (getAttackPower());
             e.setHealth(basicDamage);
-            System.out.println("You landed a basic attack!" + "\n" + e.getName() + " took " + basicDamage + "damage.");
-            System.out.println(e.getName()+" has "+e.getHealth()+" HP left.");
+            System.out.println("You landed a basic attack!" + "\n" + e.getName() + " took " + getAttackPower() + "damage.");
         }
         if (e.getHealth() <= 0){
             e.setAlive(false);
         }
+        System.out.println(e.getName()+" has "+e.getHealth()+" HP left.");
         return true;
     }
 
@@ -123,12 +122,10 @@ public class Hero extends Character {
         }
     }
 
-    public boolean addToInventoryTest(Item item, int i) {
-        if (inventory[i] == null) {
+    public void addToInventoryTest(Item item) {
+        for (int i=0; i<5; i++) {
             inventory[i] = item;
-            return true;
         }
-        return false;
     }
 }
 
