@@ -33,4 +33,9 @@ class EnemyTest {
         assertEquals(true, e.fightTest(h,5));
     }
 
+    @Test
+    void info() {
+        assertEquals("Enemy name: Ubda\nEnemy health: 100.0HP\nEnemy attack power: 10.0\nEnemy magic power: 30.0", e.info());
+    }
+
 }
