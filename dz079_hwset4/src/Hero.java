@@ -21,6 +21,7 @@ public class Hero extends Character {
         super("Bob", h, ap, al);
     }
 
+    //random number determines attack type and hit/miss
     public boolean fight(Enemy e) {
         int int_random = (int) (Math.random() * 10);
         if (int_random == 0) {
@@ -43,6 +44,7 @@ public class Hero extends Character {
         return true;
     }
 
+    //increase level by 1 and attackPower by 10% for every 100exp gained
     public boolean levelUp() {
         if (experience > 100) {
             level++;
@@ -55,6 +57,7 @@ public class Hero extends Character {
         return false;
     }
 
+    //adds item to inventory if there is space
     public boolean addToInventory(Item item) {
         for (int i = 0; i < inventory.length; i++) {
             if (inventory[i] == null) {
@@ -65,6 +68,7 @@ public class Hero extends Character {
         return false;
     }
 
+    //retrieve first item from inventory, use it, and empty that index
     public int useItem() {
         for (int i = 0; i < inventory.length; i++) {
             if (inventory[i] != null) {
@@ -79,10 +83,8 @@ public class Hero extends Character {
         return 0;
     }
 
-
+    //go through inventory and return items if not empty
     public String showInventory() {
-        //System.out.println(inventory);
-        //check to make sure this works
         String items = "";
         for (int i = 0; i < inventory.length; i++) {
             if (inventory[i] != null) {
@@ -92,6 +94,7 @@ public class Hero extends Character {
         return items;
     }
 
+    //show Hero stats
     public String info() {
         String stats = "Hero name: " + getName() + "\n" +
                 "Hero health: " + getHealth() + "\n" +
@@ -105,6 +108,8 @@ public class Hero extends Character {
 
 
 
+    /*---------- Test methods -----------*/
+    //without random int generator to test the returns of 0, odd, and even
     boolean fightTest(Enemy e, int i) {
         if (i == 0) {
             System.out.println("Your attack missed." + "\n" + e.getName() + " took 0 damage.");
@@ -122,10 +127,10 @@ public class Hero extends Character {
         }
     }
 
+    //fills the list used for the addToInventoryFullSoFail test
     public void addToInventoryTest(Item item) {
         for (int i=0; i<5; i++) {
             inventory[i] = item;
         }
     }
 }
-
